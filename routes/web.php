@@ -17,13 +17,10 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Route::get('/job/new', 'jobController@create')->name('newJob');
+Route::GET('/home', 'jobController@all')->name('home');
+Route::GET('/job/new', 'jobController@create')->name('newJob');
 Route::POST('/job/create', 'jobController@store')->name('JobStore');
-
-
-
-
-
-Route::get('/job/{id}', 'jobController@selectJob')->name('selectJob');
+Route::GET('/job/{id}', 'jobController@selectJob')->name('selectJob');
+Route::GET('/job/{id}/edit', 'jobController@edit')->name('editJob');
+Route::PATCH('/job/{id}/edit', 'jobController@update')->name('jobUpdate');
+Route::GET('/job/{id}/delete', 'jobController@delete')->name('jobDelete');
