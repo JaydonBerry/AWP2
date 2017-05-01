@@ -12,9 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts/app');
 });
 
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/job/new', 'jobController@create')->name('newJob');
+Route::POST('/job/create', 'jobController@store')->name('JobStore');
+
+
+
+
+
+Route::get('/job/{id}', 'jobController@selectJob')->name('selectJob');
