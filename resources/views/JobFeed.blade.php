@@ -5,14 +5,13 @@ Job Feed
 
 @section('content')
 
-	<div class="container">
 		<div class="page-header">
 		<h1>JOB Feed<small></small></h1>
 		</div>
 
 	    <table class="table table-bordered">
 		    <thead>
-				<tr>
+				<tr style="background-color: #dff0d8; !important" ">
 					<th>Job ID</th>
 					<th>Title</th>
 					<th>Contact Name</th>
@@ -34,7 +33,4 @@ Job Feed
 
 		    </tbody>
 		</table>
-	</div>
   @endsection
-
-  

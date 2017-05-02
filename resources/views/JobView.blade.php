@@ -27,6 +27,9 @@ Job View
 					    <li class="list-group-item">
 					    {{ $job->address }}
 					    </li>
+					    <li class="list-group-item">
+					    <a class="btn btn-danger" href="{{route('jobDelete', ['id' => $job->id])}}" >Delete Job</a>
+					    </li>
 				  	</ul>
 			  	</div>
 			</div>
@@ -35,14 +38,14 @@ Job View
 		{{-- RIGHT COLUMN --}}
 		<div class="col-lg-6">
 			<div class="thumbnail">
-				<img src="{{ $job->img }}" alt="">
+				<img src="{{ asset('/uploads/images/'. $job->img) }}" alt="">
 				<div class="caption">
 					<h3>Description</h3>
 					<p>{{ $job->description }}</p>
 				</div>
 			</div>
 		</div>
-		<a class="btn btn-danger" href="{{route('jobDelete', ['id' => $job->id])}}" >Delete Job</a>
+		
 	</div>
 
 @endsection

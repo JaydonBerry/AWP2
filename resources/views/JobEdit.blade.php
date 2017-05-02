@@ -5,7 +5,7 @@ Job Feed
 
 @section('content')
 
-            {!! Form::model($job, ['method' => 'PATCH', 'route' => ['jobUpdate', $job->id]]) !!}
+            {!! Form::model($job, ['method' => 'PATCH', 'files'=> true, 'route' => ['jobUpdate', $job->id]]) !!}
 
             <div class="form-group">
                 {!! Form::label('title', 'Title') !!}
@@ -14,7 +14,7 @@ Job Feed
 
             <div class="form-group">
                 {!! Form::label('description', 'Description') !!}
-                {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
+                {!! Form::textarea('description', null, ['class' => 'form-control' , 'size' => '5x5']) !!}
             </div>
 
             <div class="form-group">
@@ -24,7 +24,7 @@ Job Feed
 
             <div class="form-group">
                 {!! Form::label('address', 'Address') !!}
-                {!! Form::textarea('address', null, ['class' => 'form-control']) !!}
+                {!! Form::textarea('address', null, ['class' => 'form-control' , 'size' => '5x5']) !!}
             </div>
 
             <div class="form-group">
@@ -33,7 +33,7 @@ Job Feed
             </div>
 
             <div class="form-group">
-                {!! Form::label('img', 'Next of Kin') !!}
+                {!! Form::label('img', 'Image') !!}
                 {!! Form::file('img', null, ['class' => 'form-control']) !!}
             </div>
 

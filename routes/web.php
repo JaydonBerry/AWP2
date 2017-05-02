@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('layouts/app');
+    return view('auth/login');
 });
 
 Auth::routes();
@@ -20,6 +20,7 @@ Auth::routes();
 Route::GET('/home', 'jobController@all')->name('home');
 Route::GET('/job/new', 'jobController@create')->name('newJob');
 Route::POST('/job/create', 'jobController@store')->name('JobStore');
+Route::POST('/job/search', 'jobController@search')->name('JobSearch');
 Route::GET('/job/{id}', 'jobController@selectJob')->name('selectJob');
 Route::GET('/job/{id}/edit', 'jobController@edit')->name('editJob');
 Route::PATCH('/job/{id}/edit', 'jobController@update')->name('jobUpdate');
